@@ -1,0 +1,226 @@
+<%- include('../partials/head.ejs') %> 
+<body class="main-content">
+    <header class="section sec1 header active" id="home">
+        <div class="header-content">
+            <div class="left-header">
+                <div class="h-shape"></div>
+                <div class="image">
+                    <img src="<%=info.img%>"  width="300px" height="550px">
+                </div>
+            </div>
+            <div class="right-header">
+                <h1 class="name">
+                    Hi, I'm <span><%= info.name %> </span>
+                    <p><%= info.ocuupation %></p> 
+                </h1>
+                <p>
+                    <%= info.description %> 
+                </p>
+ 
+                <br>
+                <br>
+                <h1 class="name"><a href="/">Go <Span>Home</Span></a></h1>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <section class="section sec2 about" id="about">
+            <div class="main-title">
+                <h2>About <span>me </span><span class="bg-text">my stats</span></h2>
+            </div>
+            <div class="about-container">
+                <div class="left-about">
+                    <h4>Information About me</h4>
+                    <p>
+                        <%= info.about %> 
+                    </p>
+                </div>
+                <div class="right-about">
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text"><%= info.numProject %> </p>
+                            <p class="small-text">Projects <br /> Completed</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text"><%= info.designation %> </p>
+                            <p class="small-text">Open <br /> To work</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text"><%= info.currProject %> </p>
+                            <p class="small-text">Working <br /> Projects</p>
+                        </div>
+                    </div>
+                    <div class="about-item">
+                        <div class="abt-text">
+                            <p class="large-text"><%= info.repo %> </p>
+                            <p class="small-text">Number of<br /> Repository</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section sec3 " id="portfolio">
+            <div class="main-title">
+                <h2>My <span>Portfolio</span><span class="bg-text">My Work</span></h2>
+            </div>
+            <p class="port-text">
+                Some of the work I've done.
+            </p>
+            <div class="portfolios">
+                <% for(let i=1;i<=info.numShowProject.length;i++){%> 
+                <div class="portfolio-item">
+                    <div class="image">
+                        <img src=<%=`/images/port${i}.jpg`%> alt="">
+                    </div>
+                    <div class="hover-items">
+                        <h3><%= info.numShowProject[0] %> </h3>
+                        <div class="icons">
+                            <a href="<%= info.github %> " class="icon">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="<%= info.facebook %> " class="icon">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="<%= info.youtube %> " class="icon">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <% } %> 
+            </div>
+        </section>
+        <section class="section sec4 " id="blogs">
+            <div class="main-title">
+                <h2>My <span>Blogs</span> <span class="bg-text">My Blogs</span></h2>
+            </div>
+            <div class="blogs">
+                <% for(let i=1;i<=info.numBlogs.length;i++){%> 
+                <div class="blog">
+                    <img src=<%=`./images/port${i}.jpg`%>  alt="">
+                    <div class="blog-text">
+                        <h4>
+                            <%= info.numBlogs[i-1]  %> 
+                        </h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sapiente voluptate illo aut
+                            suscipit soluta.</p>
+
+                    </div>
+                </div>
+                <% } %> 
+            
+            </div>
+                
+            </div>
+        </section>
+        <section class="section sec5 " id="contact">
+            <div class="contact-container">
+                <div class="main-title">
+                    <h2>Contact <span>Me</span><span class="bg-text">Contact</span></h2>
+                </div>
+                <div class="contact-content-con">
+                    <div class="left-contact">
+                        <h4>Contact me here</h4>
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Location</span>
+                                </div>
+                                <p>: <%= info.location %></p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>Email</span>
+                                </div>
+                                <p><span>: <%= info.email %> </span></p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Education</span>
+                                </div>
+                                <p><span>: <%= info.education %> </span></p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-user-graduate"></i>
+                                    <span>Mobile Number</span>
+                                </div>
+                                <p><span>: <%= info.phone %> </span></p>
+                            </div>
+                            <div class="contact-item">
+                                <div class="icon">
+                                    <i class="fas fa-globe-africa"></i>
+                                    <span>Languages</span>
+                                </div>
+                                <p><span>: <%= info.languages %> </span></p>
+                            </div>
+                        </div>
+                        <div class="contact-icons">
+                            <div class="contact-icon">
+                                <a href="<%= info.facebook %>" target="_blank">
+                                    <i class="fab fa-facebook-f"></i>
+                                </a>
+                                <a href="<%= info.twitter %>" target="_blank">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="<%= info.github %>" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="<%= info.youtube %>" target="_blank">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right-contact">
+                        <form action="" class="contact-form">
+                            <div class="input-control i-c-2">
+                                <input type="text" required placeholder="YOUR NAME">
+                                <input type="text" required placeholder="YOUR EMAIL">
+                            </div>
+                            <div class="input-control">
+                                <input type="text" required placeholder="ENTER SUBJECT">
+                            </div>
+                            <div class="input-control">
+                                <textarea name="" id="" cols="15" rows="8" placeholder="Message Here..."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="controlls">
+        <div class="control control-1 active-btn" data-id="home">
+            <i class="fas fa-home"></i>
+        </div>
+        <div class="control control-2 " data-id="about">
+            <i class="fas fa-user"></i>
+        </div>
+        <div class="control control-3 " data-id="portfolio">
+            <i class="fas fa-briefcase"></i>
+        </div>
+        <div class="control control-4 " data-id="blogs">
+            <i class="fas fa-newspaper"></i>
+        </div>
+        <div class="control control-5 " data-id="contact">
+            <i class="fas fa-envelope-open"></i>
+        </div>
+    </div>
+    <div class="theme-btn">
+        <i class="fas fa-adjust"></i>
+    </div>
+
+    <script src="/js/main.js"></script>
+</body>
+
+<%- include('../partials/foot.ejs') %> 

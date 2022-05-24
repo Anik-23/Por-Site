@@ -1,0 +1,75 @@
+<%- include('../partials/head.ejs') %> 
+
+<body>
+    <section class="section sec5 active" id="contact">
+        <div class="contact-container">
+            <div class="main-title">
+                <h2>Portfolio <span>Creation</span><span class="bg-text">Create</span></h2>
+            </div>
+            <div class="contact-content-con">
+                <div class="right-contact">
+                    <form action="/create" method="post" class="contact-form">
+                        <div class="input-control i-c-2">
+                            <input type="text" required placeholder="YOUR NAME" name="name">
+                            <input type="text" required placeholder="YOUR occupation" name="occupation">
+                        </div>
+                        <div class="input-control i-c-2">
+                            <input type="text" required placeholder="Current working project" name="currProject">
+                            <input type="text" required placeholder="No. of repository" name="repo">
+                        </div>
+                        <div class="input-control i-c-2">
+                            <input type="text" required placeholder="address" name="location">
+                            <input type="text" required placeholder="Education" name="education">
+                        </div>
+                        <div class="input-control i-c-2">
+                            <input type="text" required placeholder="Mobile" name="phone">
+                            <input type="text" required placeholder="Your E-mail" name="email">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="Image source" name="img">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="No. of project done" name="numProject">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="current designation" name="designation">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="Github link" name="github">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="Facebook link" name="facebook">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="Youtube Channel link" name="youtube">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="Project details comma seperated" name="numShowProject">
+                        </div>
+                        <div class="input-control">
+                            <input type="text" required placeholder="Blogs written comma seperated" name="numBlogs">
+                        </div>
+                        <div class="input-control">
+                            <textarea name="description" id="" cols="15" rows="8" placeholder="Description of you"></textarea>
+                        </div>
+                        <div class="input-control">
+                            <textarea name="about" id="" cols="15" rows="8" placeholder="About yourself"></textarea>
+                        </div>
+
+                        <div class="submit-btn">
+                            <a href="#" class="main-btn">
+                                <span class="btn-text"><button style="background-color:darkcyan;color:aliceblue" type="submit">Submit</button></span>
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <h1 class="name"><a href="/"><Span style="color:red;">---------->>Abort</Span></a></h1>
+
+    </section>
+
+
+</body>
+
+<%- include('../partials/foot.ejs') %> 
